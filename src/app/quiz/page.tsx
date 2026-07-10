@@ -334,7 +334,7 @@ export default function QuizPage() {
                 <div className="mb-4 border-b border-dashed border-[#e4e1d9] pb-4">
                   <button
                     onClick={toggleCustomMode}
-                    className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl border-2 font-bold uppercase tracking-widest text-xs transition-all ${
+                    className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 font-bold uppercase tracking-widest text-[10px] transition-all ${
                       isCustomMode 
                         ? 'border-[#ef4444] text-[#ef4444] bg-[#fef2f2] hover:bg-[#fee2e2]' 
                         : 'border-[#1a1a1a] text-[#1a1a1a] bg-white hover:bg-[#f5f4f0] shadow-sm'
@@ -343,8 +343,8 @@ export default function QuizPage() {
                     {isCustomMode ? (
                       <><span>←</span> Cancel Custom Entry</>
                     ) : (
-                      <span className="flex items-center gap-2">
-                        <span>✏️</span> Enter your exact number <span className="opacity-50 lowercase tracking-normal">(recommended)</span>
+                      <span className="flex items-center gap-1.5 whitespace-nowrap">
+                        <span>✏️</span> Enter exact number <span className="opacity-50 lowercase tracking-normal">(recommended)</span>
                       </span>
                     )}
                   </button>

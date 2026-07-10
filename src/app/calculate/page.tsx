@@ -385,7 +385,7 @@ export default function CalculatePage() {
         <a href="/">
           <img src="/logo.png" className="h-14 object-contain" alt="The FIRE Blueprint" />
         </a>
-        <Link href="/results" className="text-xs font-bold text-[#5c5c5c] hover:text-[#1a1a1a] uppercase tracking-widest transition-colors">
+        <Link href="/results" className="text-[10px] font-bold text-[#5c5c5c] hover:text-[#1a1a1a] uppercase tracking-widest transition-colors">
           ← Back to Strategies
         </Link>
       </header>
@@ -913,8 +913,8 @@ export default function CalculatePage() {
           <AdBanner />
         </div>
 
-        <section className="text-center py-8 mt-8">
-          <Link href="/results" className="text-xs font-bold uppercase tracking-widest text-[#5c5c5c] hover:text-[#1a1a1a] px-6 py-4 transition-colors">
+        <section className="text-center py-8 mt-4">
+          <Link href="/results" className="text-[10px] font-bold uppercase tracking-widest text-[#5c5c5c] hover:text-[#1a1a1a] px-4 py-3 transition-colors">
             ← Back to Strategies
           </Link>
           <p className="text-[11px] font-bold uppercase tracking-widest mt-8 text-[#9a9a9a]">

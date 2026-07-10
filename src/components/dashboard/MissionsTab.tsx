@@ -105,27 +105,27 @@ export function MissionsTab({
           </motion.div>
         )}
         
-        {hasDebt && debtRate === 'over 5%' && (
+        {hasDebt && debtRate === 'over 7%' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="relative z-10">
             <StepCard
               step={globalStepCounter}
               priority="critical"
               title="Liquidate High-Interest Debt"
-              body="Your debt costs you over 5%. Every extra dollar goes here before you invest another dime."
+              body="Your debt costs you over 7%. Every extra dollar goes here before you invest another dime."
               why="The market returns 7%. Your debt costs more. Paying it down is mathematically superior and carries zero risk."
               {...getStepStatus(globalStepCounter++)}
             />
           </motion.div>
         )}
         
-        {hasDebt && debtRate === 'under 5%' && (
+        {hasDebt && debtRate === 'under 7%' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="relative z-10">
             <StepCard
               step={globalStepCounter}
               priority="normal"
               title="Arbitrage Low-Interest Debt"
-              body="Your debt costs under 5%. Do not pay a cent extra. Pay the minimums and invest the rest."
-              why="If debt costs 3% and investments yield 7%, paying debt early actively destroys wealth. Let inflation eat the debt while your investments compound."
+              body="Your debt costs under 7%. Do not pay a cent extra. Pay the minimums and invest the rest."
+              why="If debt costs 4% and investments yield 7%, paying debt early actively destroys wealth. Let inflation eat the debt while your investments compound."
               {...getStepStatus(globalStepCounter++)}
             />
           </motion.div>

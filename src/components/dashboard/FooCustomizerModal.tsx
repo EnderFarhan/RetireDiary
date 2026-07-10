@@ -163,8 +163,8 @@ export function FooCustomizerModal({ isOpen, onClose, initialConfig, onSave }: F
                       onChange={(e) => setConfig({ ...config, debtRate: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border-2 border-[#e4e1d9] focus:border-[#16a34a] focus:ring-0 transition-colors font-bold text-[#1a1a1a]"
                     >
-                      <option value="under 5%">Under 5% (Low Priority)</option>
-                      <option value="over 5%">Over 5% (High Priority Toxic Debt)</option>
+                      <option value="under 7%">Under 7% (Low Priority)</option>
+                      <option value="over 7%">Over 7% (High Priority Toxic Debt)</option>
                     </select>
                   </div>
                 )}
