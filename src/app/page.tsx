@@ -57,8 +57,8 @@ function ChartTooltip({ active, payload, label }: any) {
 // ────────────────────────────────────────────────────────
 const Hero = () => {
   return (
-    <section className="relative min-h-[60dvh] w-full flex items-center px-6 overflow-hidden bg-white pt-28 md:pt-32 pb-16 md:pb-24">
-      <div className="max-w-6xl mx-auto w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-8 items-center relative z-10">
+    <section className="relative min-h-[60dvh] w-full flex items-center px-6 overflow-hidden bg-white pt-24 md:pt-32 pb-8 md:pb-24">
+      <div className="max-w-6xl mx-auto w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-4 md:gap-8 items-center relative z-10">
 
         {/* Left text column */}
         <motion.div
@@ -67,25 +67,25 @@ const Hero = () => {
           variants={staggerContainer}
           className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left"
         >
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#1a1a1a] leading-[1.1] md:leading-[1.05] mb-5 tracking-tighter">
+          <motion.h1 variants={fadeUp} className="text-2xl sm:text-3xl md:text-5xl lg:text-[3.5rem] font-black text-[#1a1a1a] leading-[1.1] md:leading-[1.05] mb-3 md:mb-5 tracking-tighter">
             The financial industry is stealing <span className="text-[#ef4444]">30%</span> of your wealth. Here is the math to stop them.
           </motion.h1>
 
-          <motion.h2 variants={fadeUp} className="text-lg md:text-xl italic font-light text-[#5c5c5c] mb-5" style={{ fontFamily: 'Georgia, serif' }}>
+          <motion.h2 variants={fadeUp} className="text-sm md:text-xl italic font-light text-[#5c5c5c] mb-3 md:mb-5" style={{ fontFamily: 'Georgia, serif' }}>
             Retirement isn't an age. It's an equation.
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-base md:text-lg text-[#5c5c5c] mb-8 max-w-lg leading-relaxed">
+          <motion.p variants={fadeUp} className="text-xs md:text-lg text-[#5c5c5c] mb-5 md:mb-8 max-w-lg leading-relaxed">
             You trade 40 hours a week for money. Then you pay a guy in a suit 1.5% a year to underperform the market. It is a terrible trade. We are going to fix the equation and buy back your time.
           </motion.p>
 
           <motion.div variants={fadeUp} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
             <Link
               href="/quiz"
-              className="group relative inline-flex items-center gap-3 bg-[#16a34a] text-white px-8 py-4 rounded-full font-bold text-base overflow-hidden shadow-lg shadow-green-900/20"
+              className="group relative inline-flex items-center gap-2 md:gap-3 bg-[#16a34a] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base overflow-hidden shadow-lg shadow-green-900/20"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Get The Free Blueprint <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                Get The Free Blueprint <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
           </motion.div>
@@ -96,7 +96,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full max-w-[280px] md:max-w-[550px] aspect-square mx-auto flex items-center justify-center pointer-events-none overflow-hidden mb-2 md:mb-0"
+          className="relative w-full max-w-[180px] md:max-w-[550px] aspect-square mx-auto flex items-center justify-center pointer-events-none overflow-hidden mb-1 md:mb-0"
           style={{
             WebkitMaskImage: 'radial-gradient(circle at center, black 50%, transparent 80%)',
             maskImage: 'radial-gradient(circle at center, black 50%, transparent 80%)'
