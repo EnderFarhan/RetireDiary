@@ -79,32 +79,6 @@ export function MissionsTab({
           </motion.div>
         )}
 
-        {annualIncome < 70000 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
-            <StepCard
-              step={globalStepCounter}
-              priority="critical"
-              title="Increase Your Inputs"
-              body="You make under $70k. Stop working low-leverage side gigs. Focus all free time on high-ROI skill acquisition and career pivots to increase your baseline."
-              why="You cannot budget your way to wealth on a low income. Your income is your most powerful wealth-building tool. Increase it."
-              {...getStepStatus(globalStepCounter++)}
-            />
-          </motion.div>
-        )}
-
-        {hasEmployerMatch && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
-            <StepCard
-              step={globalStepCounter}
-              priority="high"
-              title={`Capture Free Money`}
-              body={`Log into your HR portal immediately. Set your contribution to ${matchPct}. This is a guaranteed 100% return.`}
-              why="Leaving a match on the table is mathematically indefensible."
-              {...getStepStatus(globalStepCounter++)}
-            />
-          </motion.div>
-        )}
-        
         {hasDebt && debtRate === 'over 7%' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="relative z-10">
             <StepCard
@@ -113,6 +87,19 @@ export function MissionsTab({
               title="Liquidate High-Interest Debt"
               body="Your debt costs you over 7%. Every extra dollar goes here before you invest another dime."
               why="The market returns 7%. Your debt costs more. Paying it down is mathematically superior and carries zero risk."
+              {...getStepStatus(globalStepCounter++)}
+            />
+          </motion.div>
+        )}
+
+        {hasEmployerMatch && (
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="relative z-10">
+            <StepCard
+              step={globalStepCounter}
+              priority="high"
+              title="Capture Free Money (If Offered)"
+              body="If your employer offers a 401(k) / RRSP match, log into your HR portal immediately. Set your contribution to capture 100% of the match limit."
+              why="Leaving an employer match on the table is mathematically indefensible. It is a guaranteed return on your money."
               {...getStepStatus(globalStepCounter++)}
             />
           </motion.div>
