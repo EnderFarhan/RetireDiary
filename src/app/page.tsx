@@ -711,10 +711,14 @@ const ThePitch = () => (
         <span className="absolute inset-0 bg-[#333] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
       </Link>
 
-      <div className="flex items-center justify-center gap-2 mt-6 text-xs text-[#9a9a9a] font-medium">
-        <CheckCircle2 size={14} className="text-[#16a34a]" /> Takes 2 minutes
-        <span className="mx-2">•</span>
-        <CheckCircle2 size={14} className="text-[#16a34a]" /> No finance degree required
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mt-6 text-[11px] sm:text-xs text-[#9a9a9a] font-medium">
+        <div className="flex items-center gap-1.5">
+          <CheckCircle2 size={14} className="text-[#16a34a]" /> Takes 2 minutes
+        </div>
+        <span className="hidden sm:block text-[#e4e1d9]">•</span>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle2 size={14} className="text-[#16a34a]" /> No finance degree required
+        </div>
       </div>
     </motion.div>
   </section>
@@ -787,12 +791,12 @@ export default function Home() {
         <ThePitch />
       </main>
 
-      <footer className="bg-[#1a1a1a] text-white rounded-t-[3rem] px-8 py-12 text-center mt-auto">
-        <p className="text-xs text-[#9a9a9a] max-w-xl mx-auto mb-4">
+      <footer className="bg-[#1a1a1a] text-white rounded-t-[2rem] md:rounded-t-[3rem] px-4 md:px-8 py-8 md:py-12 text-center mt-auto">
+        <p className="text-[11px] md:text-xs text-[#9a9a9a] max-w-[280px] md:max-w-xl mx-auto mb-3 md:mb-4 leading-relaxed">
           A bespoke, mathematically rigorous approach to reclaiming your time and opting out of the corporate narrative.
         </p>
-        <p className="text-[10px] text-[#5c5c5c]">
-          © {new Date().getFullYear()} RetireDiary. All rights reserved. Not financial advice. We're just the protective friend at the bar showing you the math.
+        <p className="text-[9px] md:text-[10px] text-[#5c5c5c] max-w-[280px] md:max-w-none mx-auto leading-relaxed">
+          © {new Date().getFullYear()} RetireDiary. All rights reserved. Not financial advice.<br className="md:hidden" /> We're just the protective friend at the bar showing you the math.
         </p>
       </footer>
     </div>
