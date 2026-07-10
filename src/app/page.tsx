@@ -211,18 +211,18 @@ const MonteCarloHook = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 px-6 max-w-6xl mx-auto">
+    <section className="py-8 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid lg:grid-cols-2 gap-10 items-center bg-[#f0fdf4] rounded-[2rem] p-8 md:p-12 border border-[#bbf7d0]"
+        className="grid lg:grid-cols-2 gap-6 md:gap-10 items-center bg-[#f0fdf4] rounded-[1.25rem] md:rounded-[2rem] p-6 md:p-12 border border-[#bbf7d0]"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-4">
+          <h2 className="text-2xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-3 md:mb-4">
             The Math of the Stock Market.
           </h2>
-          <p className="text-base text-[#5c5c5c] leading-relaxed mb-6">
+          <p className="text-xs md:text-base text-[#5c5c5c] leading-relaxed mb-4 md:mb-6">
             Average returns are a lie. The market is volatile. Our calculator runs 500 <strong>Monte Carlo simulations</strong> to show you the exact probability of success if you retire into a crash vs a boom. We deal in reality, not averages. 
           </p>
           <button
@@ -269,28 +269,28 @@ const MonteCarloHook = () => {
 // ────────────────────────────────────────────────────────
 const CuriosityHook = () => {
   return (
-    <section id="math" className="py-10 md:py-12 px-6 bg-[#1a1a1a] text-white rounded-[2rem] mx-4 md:mx-auto max-w-5xl my-10 overflow-hidden relative">
-      <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center">
+    <section id="math" className="py-8 md:py-12 px-4 md:px-6 bg-[#1a1a1a] text-white rounded-[1.25rem] md:rounded-[2rem] mx-3 md:mx-auto max-w-5xl my-6 md:my-10 overflow-hidden relative">
+      <div className="grid lg:grid-cols-[1.3fr_1fr] gap-6 md:gap-12 items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-black mb-3 tracking-tight leading-tight text-white">
+          <motion.h2 variants={fadeUp} className="text-2xl md:text-4xl font-black mb-2 md:mb-3 tracking-tight leading-tight text-white">
             Wealth is a definitive formula.
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white text-base mb-6 leading-relaxed">
+          <motion.p variants={fadeUp} className="text-xs md:text-base text-white mb-5 md:mb-6 leading-relaxed">
             Forget turning 65. The traditional timeline is a scam designed to keep you working and paying fees. When you strip away the BS, buying back your time comes down to one indisputable law of math: the 4% rule.
           </motion.p>
-          <motion.div variants={fadeUp} className="bg-[#2a2a2a] p-5 rounded-2xl border border-[#333] mb-6 relative">
-            <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#16a34a] rounded-full flex items-center justify-center shadow-lg">
+          <motion.div variants={fadeUp} className="bg-[#2a2a2a] p-4 md:p-5 rounded-xl md:rounded-2xl border border-[#333] mb-5 md:mb-6 relative">
+            <div className="absolute -top-3 -right-3 w-8 h-8 md:w-10 md:h-10 bg-[#16a34a] rounded-full flex items-center justify-center shadow-lg">
               <Calculator size={18} className="text-white" />
             </div>
-            <div className="font-mono text-xl md:text-2xl font-bold text-center text-[#4ade80] mb-2 tracking-widest">
+            <div className="font-mono text-lg md:text-2xl font-bold text-center text-[#4ade80] mb-1 md:mb-2 tracking-widest">
               YOUR SAVINGS RATE = YOUR TIMELINE
             </div>
-            <p className="text-xs text-center text-[#9a9a9a]">
+            <p className="text-[10px] md:text-xs text-center text-[#9a9a9a]">
               (It's not about how much you make. It's about what you keep.)
             </p>
           </motion.div>
@@ -317,9 +317,9 @@ const CuriosityHook = () => {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="bg-white p-8 rounded-[1.5rem] border border-[#e4e1d9] shadow-xl text-[#1a1a1a]">
-            <h3 className="text-xl font-black mb-2">No more finance jargon.</h3>
-            <p className="text-[#5c5c5c] mb-6 text-sm">We don't use words designed to mask the truth.</p>
+          <div className="bg-white p-5 md:p-8 rounded-[1.25rem] md:rounded-[1.5rem] border border-[#e4e1d9] shadow-xl text-[#1a1a1a]">
+            <h3 className="text-lg md:text-xl font-black mb-1 md:mb-2">No more finance jargon.</h3>
+            <p className="text-[#5c5c5c] mb-4 md:mb-6 text-[11px] md:text-sm">We don't use words designed to mask the truth.</p>
 
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100 shadow-sm">
@@ -369,32 +369,32 @@ const CorruptionHook = () => {
   const feeLost = feeComparison.feeDifferenceLost;
 
   return (
-    <section id="lie" className="py-12 md:py-16 px-6 max-w-6xl mx-auto">
+    <section id="lie" className="py-8 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-4">
+        <h2 className="text-2xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-3 md:mb-4">
           The 1.5% Wealth Tax.
         </h2>
-        <p className="text-base text-[#5c5c5c] max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xs md:text-base text-[#5c5c5c] max-w-3xl mx-auto leading-relaxed">
           Financial advisors charge a 1.5% fee. It sounds small, but it's a tax on your entire net worth every single year. Over 20 years, they statistically underperform a basic index fund. You are paying them a premium to lose your money.
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-12 gap-10 items-center">
+      <div className="grid lg:grid-cols-12 gap-6 md:gap-10 items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="lg:col-span-8 bg-white p-6 md:p-8 rounded-[2rem] border border-[#e4e1d9] shadow-sm"
+          className="lg:col-span-8 bg-white p-5 md:p-8 rounded-[1.25rem] md:rounded-[2rem] border border-[#e4e1d9] shadow-sm"
         >
-          <div className="mb-6 flex justify-between items-end">
+          <div className="mb-4 md:mb-6 flex justify-between items-end">
             <div>
-              <p className="text-xs font-bold text-[#ef4444] uppercase tracking-wider mb-1">Example: Wealth Siphoned by 1.5% Fee</p>
-              <div className="text-4xl font-black text-[#ef4444] tracking-tighter">
+              <p className="text-[10px] md:text-xs font-bold text-[#ef4444] uppercase tracking-wider mb-1">Example: Wealth Siphoned by 1.5% Fee</p>
+              <div className="text-3xl md:text-4xl font-black text-[#ef4444] tracking-tighter">
                 {formatCurrency(feeLost, true)}
               </div>
               <p className="text-xs text-[#5c5c5c] mt-1">
@@ -436,16 +436,16 @@ const CorruptionHook = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="lg:col-span-4 space-y-6"
+          className="lg:col-span-4 space-y-4 md:space-y-6 mt-6 lg:mt-0"
         >
-          <motion.div variants={fadeUp} className="bg-white p-6 rounded-[1.5rem] border border-[#e4e1d9] shadow-sm">
-            <h3 className="font-black text-lg text-[#1a1a1a] mb-2">That was just an example.</h3>
-            <p className="text-[#5c5c5c] text-sm mb-4 leading-relaxed">
+          <motion.div variants={fadeUp} className="bg-white p-5 md:p-6 rounded-[1.25rem] md:rounded-[1.5rem] border border-[#e4e1d9] shadow-sm">
+            <h3 className="font-black text-base md:text-lg text-[#1a1a1a] mb-2">That was just an example.</h3>
+            <p className="text-[#5c5c5c] text-xs md:text-sm mb-4 leading-relaxed">
               The math is universal, but the inputs are yours. To see exactly how much cash the finance industry is siphoning from your accounts, you need to plug in your own numbers.
             </p>
             <Link
               href="/quiz"
-              className="group w-full inline-flex justify-center items-center gap-2 bg-[#1a1a1a] text-white px-6 py-3 rounded-xl font-bold text-sm transition-colors hover:bg-[#333]"
+              className="group w-full inline-flex justify-center items-center gap-2 bg-[#1a1a1a] text-white px-5 md:px-6 py-3 rounded-xl font-bold text-[13px] md:text-sm transition-colors hover:bg-[#333]"
             >
               Calculate Your Math <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -552,17 +552,17 @@ const StrategyCard = ({ strategy, index }: { strategy: any, index: number }) => 
 
 const StrategiesSection = () => {
   return (
-    <section id="strategies" className="scroll-mt-24 py-8 md:py-10 px-6 max-w-6xl mx-auto">
+    <section id="strategies" className="scroll-mt-24 py-6 md:py-10 px-4 md:px-6 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-8"
+        className="text-center mb-6 md:mb-8"
       >
-        <h2 className="text-2xl md:text-3xl font-black text-[#1a1a1a] tracking-tight mb-3">
+        <h2 className="text-xl md:text-3xl font-black text-[#1a1a1a] tracking-tight mb-2 md:mb-3">
           Choose your vehicle.
         </h2>
-        <p className="text-sm md:text-base text-[#5c5c5c] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs md:text-base text-[#5c5c5c] max-w-2xl mx-auto leading-relaxed">
           Financial independence is about leverage and options. You don't have to live in a van. Pick the math that buys the lifestyle you actually want.
         </p>
       </motion.div>
@@ -628,9 +628,9 @@ const FAQItem = ({ faq, index }: { faq: any, index: number }) => {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between py-6 text-left"
+        className="flex w-full items-center justify-between py-4 md:py-6 text-left"
       >
-        <h4 className="text-base md:text-lg font-bold text-[#1a1a1a] pr-8">{faq.q}</h4>
+        <h4 className="text-sm md:text-lg font-bold text-[#1a1a1a] pr-8">{faq.q}</h4>
         <div className="shrink-0 text-[#16a34a]">
           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </div>
@@ -643,7 +643,7 @@ const FAQItem = ({ faq, index }: { faq: any, index: number }) => {
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <p className="text-[#5c5c5c] text-sm md:text-base leading-relaxed pb-6 pr-4">
+            <p className="text-[#5c5c5c] text-xs md:text-base leading-relaxed pb-4 md:pb-6 pr-4">
               {faq.a}
             </p>
           </motion.div>
@@ -655,22 +655,22 @@ const FAQItem = ({ faq, index }: { faq: any, index: number }) => {
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="scroll-mt-28 pt-4 pb-8 md:pt-8 md:pb-10 px-6 max-w-3xl mx-auto">
+    <section id="faq" className="scroll-mt-28 pt-2 pb-6 md:pt-8 md:pb-10 px-4 md:px-6 max-w-3xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-4">
+        <h2 className="text-2xl md:text-4xl font-black text-[#1a1a1a] tracking-tight mb-3 md:mb-4">
           Common Questions.
         </h2>
-        <p className="text-base text-[#5c5c5c] leading-relaxed">
+        <p className="text-xs md:text-base text-[#5c5c5c] leading-relaxed">
           The math works. The only thing stopping you is the lies you've been sold.
         </p>
       </motion.div>
 
-      <div className="bg-white rounded-[2rem] border border-[#e4e1d9] p-6 md:p-10 shadow-sm">
+      <div className="bg-white rounded-[1.25rem] md:rounded-[2rem] border border-[#e4e1d9] p-5 md:p-10 shadow-sm">
         {FAQS.map((faq, i) => (
           <FAQItem key={i} faq={faq} index={i} />
         ))}
@@ -683,27 +683,27 @@ const FAQSection = () => {
 // 5. THE PITCH (Checkout Conversion CTA)
 // ────────────────────────────────────────────────────────
 const ThePitch = () => (
-  <section id="blueprint" className="scroll-mt-28 pt-8 pb-16 md:pt-10 md:pb-20 px-6 text-center">
+  <section id="blueprint" className="scroll-mt-28 pt-6 pb-12 md:pt-10 md:pb-20 px-4 md:px-6 text-center">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className="max-w-3xl mx-auto bg-white p-10 md:p-16 rounded-[2.5rem] border border-[#e4e1d9] shadow-2xl relative overflow-hidden"
+      className="max-w-3xl mx-auto bg-white p-6 md:p-16 rounded-[1.5rem] md:rounded-[2.5rem] border border-[#e4e1d9] shadow-2xl relative overflow-hidden"
     >
-      <div className="absolute top-0 left-0 w-full h-2 bg-[#16a34a]" />
+      <div className="absolute top-0 left-0 w-full h-1.5 md:h-2 bg-[#16a34a]" />
 
-      <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4 tracking-tight leading-tight">
+      <h2 className="text-2xl md:text-4xl font-black text-[#1a1a1a] mb-3 md:mb-4 tracking-tight leading-tight">
         Get the blueprint. <br /> Zero cost.
       </h2>
 
-      <p className="text-base text-[#5c5c5c] mb-8 max-w-xl mx-auto leading-relaxed">
+      <p className="text-xs md:text-base text-[#5c5c5c] mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
         Stop guessing. Stop paying middlemen. Plug in your numbers to generate your exact mathematical blueprint and see your timeline. <strong>100% free. No BS.</strong>
       </p>
 
       <Link
         href="/quiz"
-        className="group relative inline-flex items-center gap-3 bg-[#1a1a1a] text-white px-10 py-5 rounded-full font-bold text-lg overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-xl"
+        className="group relative inline-flex items-center gap-2 md:gap-3 bg-[#1a1a1a] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm md:text-lg overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-xl"
       >
         <span className="relative z-10 flex items-center gap-2">
           Generate Your Blueprint <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
