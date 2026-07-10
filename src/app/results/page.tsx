@@ -34,19 +34,19 @@ function StrategyCard({
       className={`rounded-3xl border-2 overflow-hidden bg-white ${isTop ? 'border-[#16a34a] shadow-[0_8px_30px_rgba(22,163,74,0.12)]' : 'border-[#e4e1d9]'}`}
     >
       {/* Card Header */}
-      <div className="p-6 lg:p-8">
+      <div className="p-5 lg:p-8">
         <div className="flex items-start justify-between gap-4">
           {/* Left: rank + name */}
-          <div className="flex items-start gap-4">
-            <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-base font-black text-white ${isTop ? 'bg-[#16a34a]' : 'bg-[#1a1a1a]'}`}>
+          <div className="flex items-start gap-3">
+            <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black text-white ${isTop ? 'bg-[#16a34a]' : 'bg-[#1a1a1a]'}`}>
               {rank + 1}
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl">{strategy.emoji}</span>
-                <h3 className="text-xl font-black text-[#1a1a1a]">{strategy.name}</h3>
+                <span className="text-xl">{strategy.emoji}</span>
+                <h3 className="text-lg font-black text-[#1a1a1a]">{strategy.name}</h3>
               </div>
-              <p className="text-sm font-bold text-[#5c5c5c] uppercase tracking-wider">
+              <p className="text-[10px] font-bold text-[#5c5c5c] uppercase tracking-wider">
                 {RANK_LABELS[rank]}
               </p>
             </div>
@@ -54,10 +54,10 @@ function StrategyCard({
 
           {/* Right: match % */}
           <div className="text-right flex-shrink-0">
-            <div className={`text-3xl font-black tracking-tighter ${isTop ? 'text-[#16a34a]' : 'text-[#1a1a1a]'}`}>
+            <div className={`text-2xl font-black tracking-tighter ${isTop ? 'text-[#16a34a]' : 'text-[#1a1a1a]'}`}>
               {strategyScore.percentage}%
             </div>
-            <div className="text-xs font-bold text-[#5c5c5c] uppercase tracking-widest">match</div>
+            <div className="text-[10px] font-bold text-[#5c5c5c] uppercase tracking-widest">match</div>
           </div>
         </div>
 
@@ -72,40 +72,40 @@ function StrategyCard({
         </div>
 
         {/* Tagline */}
-        <p className="mt-5 text-base font-medium italic text-[#5c5c5c]">
+        <p className="mt-4 text-sm font-medium italic text-[#5c5c5c]">
           &ldquo;{strategy.tagline}&rdquo;
         </p>
 
         {/* Plain English */}
-        <p className="mt-3 text-base leading-relaxed text-[#1a1a1a]">
+        <p className="mt-3 text-sm leading-relaxed text-[#1a1a1a]">
           {strategy.plainEnglish}
         </p>
 
         {/* Key stats row */}
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap gap-2">
           {[
             { label: 'Timeline', val: strategy.typicalTimeline },
             { label: 'Savings Rate', val: strategy.savingsRate },
             { label: 'Example', val: strategy.fireNumberExample },
           ].map(({ label, val }) => (
-            <div key={label} className="flex-1 min-w-[120px] rounded-2xl p-4 bg-[#f5f4f0] border border-[#e4e1d9]">
-              <div className="text-[10px] font-bold text-[#5c5c5c] uppercase tracking-widest mb-1">{label}</div>
-              <div className="text-sm font-black text-[#1a1a1a]">{val}</div>
+            <div key={label} className="flex-1 min-w-[100px] rounded-xl p-3 bg-[#f5f4f0] border border-[#e4e1d9]">
+              <div className="text-[9px] font-bold text-[#5c5c5c] uppercase tracking-widest mb-1">{label}</div>
+              <div className="text-xs font-black text-[#1a1a1a]">{val}</div>
             </div>
           ))}
         </div>
 
         {/* Action row */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
           <button
             onClick={() => onSelect(strategy.id)}
-            className={`w-full sm:flex-1 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${isTop ? 'bg-[#16a34a] text-white shadow-lg shadow-green-900/20 hover:bg-[#15803d]' : 'bg-[#1a1a1a] text-white hover:bg-[#333]'}`}
+            className={`w-full sm:flex-1 px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${isTop ? 'bg-[#16a34a] text-white shadow-lg shadow-green-900/20 hover:bg-[#15803d]' : 'bg-[#1a1a1a] text-white hover:bg-[#333]'}`}
           >
             Calculate This Strategy →
           </button>
           <button
             onClick={() => setExpanded((e) => !e)}
-            className="w-full sm:w-auto px-6 py-4 text-xs font-bold uppercase tracking-widest text-[#5c5c5c] hover:text-[#1a1a1a] transition-colors flex-shrink-0"
+            className="w-full sm:w-auto px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-[#5c5c5c] hover:text-[#1a1a1a] transition-colors flex-shrink-0"
           >
             {expanded ? '▲ Less' : '▼ Why this fits you'}
           </button>
@@ -122,46 +122,46 @@ function StrategyCard({
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden border-t border-[#e4e1d9] bg-[#f5f4f0]"
           >
-            <div className="p-6 lg:p-8 space-y-6">
+            <div className="p-5 lg:p-8 space-y-4">
               {/* Glossary note */}
-              <div className="rounded-2xl p-5 bg-white border border-[#e4e1d9]">
-                <p className="text-[11px] font-bold mb-2 text-[#1a1a1a] uppercase tracking-widest">What is the Target Number?</p>
-                <p className="text-sm leading-relaxed text-[#5c5c5c]">
+              <div className="rounded-xl p-4 bg-white border border-[#e4e1d9]">
+                <p className="text-[10px] font-bold mb-1.5 text-[#1a1a1a] uppercase tracking-widest">What is the Target Number?</p>
+                <p className="text-xs leading-relaxed text-[#5c5c5c]">
                   Your Target Number = Annual Spend × 25. This is the exact amount you need invested to safely withdraw 4%/year forever. It's backed by 50+ years of market data. Hit this number, and you never have to trade time for money again.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-sm font-black text-[#1a1a1a] mb-2">What it actually is</h4>
-                <p className="text-base leading-relaxed text-[#5c5c5c]">{strategy.deepDive.whatItIs}</p>
+                <h4 className="text-xs font-black text-[#1a1a1a] mb-1">What it actually is</h4>
+                <p className="text-xs leading-relaxed text-[#5c5c5c]">{strategy.deepDive.whatItIs}</p>
               </div>
 
               <div>
-                <h4 className="text-sm font-black text-[#1a1a1a] mb-2">Why the math works</h4>
-                <p className="text-base leading-relaxed text-[#5c5c5c]">{strategy.deepDive.whyItWorks}</p>
+                <h4 className="text-xs font-black text-[#1a1a1a] mb-1">Why the math works</h4>
+                <p className="text-xs leading-relaxed text-[#5c5c5c]">{strategy.deepDive.whyItWorks}</p>
               </div>
 
               <div>
-                <h4 className="text-sm font-black text-[#1a1a1a] mb-2">What your life looks like after</h4>
-                <p className="text-base leading-relaxed text-[#5c5c5c]">{strategy.deepDive.dayInTheLife}</p>
+                <h4 className="text-xs font-black text-[#1a1a1a] mb-1">What your life looks like after</h4>
+                <p className="text-xs leading-relaxed text-[#5c5c5c]">{strategy.deepDive.dayInTheLife}</p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6 pt-4">
+              <div className="grid sm:grid-cols-2 gap-4 pt-3">
                 <div>
-                  <h4 className="text-sm font-black text-[#16a34a] mb-3">✓ Best for</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-xs font-black text-[#16a34a] mb-2">✓ Best for</h4>
+                  <ul className="space-y-1.5">
                     {strategy.deepDive.bestFor.map((item) => (
-                      <li key={item} className="text-sm leading-relaxed text-[#1a1a1a] flex items-start gap-2">
+                      <li key={item} className="text-xs leading-relaxed text-[#1a1a1a] flex items-start gap-1.5">
                         <span className="text-[#16a34a] font-bold">·</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-black text-[#ef4444] mb-3">⚠ Watch out for</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-xs font-black text-[#ef4444] mb-2">⚠ Watch out for</h4>
+                  <ul className="space-y-1.5">
                     {strategy.deepDive.watchOutFor.map((item) => (
-                      <li key={item} className="text-sm leading-relaxed text-[#1a1a1a] flex items-start gap-2">
+                      <li key={item} className="text-xs leading-relaxed text-[#1a1a1a] flex items-start gap-1.5">
                         <span className="text-[#ef4444] font-bold">·</span> {item}
                       </li>
                     ))}
@@ -262,31 +262,31 @@ export default function ResultsPage() {
         </button>
       </header>
 
-      <main className="max-w-3xl mx-auto px-6 py-12 lg:py-16">
+      <main className="max-w-3xl mx-auto px-5 py-8 lg:py-16">
         {/* Intro */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#16a34a] border border-[#16a34a]/30 rounded-full mb-6">
+          <div className="inline-flex w-fit self-start items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#16a34a] border border-[#16a34a]/30 rounded-full mb-4">
             Based on your answers
           </div>
-          <h1 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight text-[#1a1a1a]">
+          <h1 className="text-3xl lg:text-5xl font-black mb-4 tracking-tight text-[#1a1a1a]">
             Here is your math.
           </h1>
 
           {isUnrealistic && (
-            <div className="rounded-2xl p-5 mb-8 bg-[#fef2f2] border-2 border-[#ef4444] text-[#7f1d1d] shadow-sm flex items-start gap-3">
-              <span className="text-xl">⚠️</span>
+            <div className="rounded-xl p-4 mb-6 bg-[#fef2f2] border-2 border-[#ef4444] text-[#7f1d1d] shadow-sm flex items-start gap-3">
+              <span className="text-lg mt-0.5">⚠️</span>
               <div className="flex-1">
-                <p className="text-sm leading-relaxed font-medium mb-1">
+                <p className="text-xs leading-relaxed font-medium mb-1">
                   <strong className="font-black text-[#ef4444]">Warning: The Math Does Not Work</strong>
                 </p>
-                <p className="text-sm leading-relaxed font-medium">
+                <p className="text-xs leading-relaxed font-medium">
                   Your timeline of {result.userInputs.targetRetirementAge ? result.userInputs.targetRetirementAge - result.userInputs.age : ''} years is mathematically impossible without drastically increasing your inputs (income) or decreasing your outputs (expenses). We ranked these based on your inputs, but you need to face reality and adjust your timeline or consider Barista/Coast FIRE.
                 </p>
               </div>
             </div>
           )}
 
-          <p className="text-lg lg:text-xl mb-12 text-[#5c5c5c] leading-relaxed">
+          <p className="text-sm lg:text-xl mb-8 text-[#5c5c5c] leading-relaxed">
             These vehicles are ranked by how well they match your inputs. Click &ldquo;Calculate This Strategy&rdquo; to generate your blueprint. Don't overthink it.
           </p>
         </motion.div>

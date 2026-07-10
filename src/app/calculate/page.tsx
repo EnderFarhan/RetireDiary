@@ -407,8 +407,8 @@ export default function CalculatePage() {
             {strategy.emoji} Your {strategy.name} Blueprint
           </h1>
           
-          <div className="mb-6 bg-white rounded-2xl border-2 border-[#e4e1d9] p-5 shadow-sm">
-            <p className="text-base text-[#1a1a1a] font-medium leading-relaxed mb-3">
+          <div className="mb-6 bg-white rounded-xl border-2 border-[#e4e1d9] p-4 shadow-sm">
+            <p className="text-sm text-[#1a1a1a] font-medium leading-relaxed mb-3">
               {strategy.plainEnglish}
             </p>
             <details className="group">
@@ -416,14 +416,14 @@ export default function CalculatePage() {
                 <span className="group-open:hidden">View strategy mechanics ↓</span>
                 <span className="hidden group-open:inline">Hide mechanics ↑</span>
               </summary>
-              <div className="pt-4 text-sm text-[#5c5c5c] space-y-3 border-t border-[#e4e1d9] mt-3">
+              <div className="pt-3 text-xs text-[#5c5c5c] space-y-3 border-t border-[#e4e1d9] mt-3">
                 <p><strong className="text-[#1a1a1a]">What it is:</strong> {strategy.deepDive.whatItIs}</p>
                 <p><strong className="text-[#1a1a1a]">Why it works:</strong> {strategy.deepDive.whyItWorks}</p>
               </div>
             </details>
           </div>
 
-          <p className="text-xs font-bold text-[#5c5c5c] mb-4 uppercase tracking-widest">
+          <p className="text-[10px] font-bold text-[#5c5c5c] mb-3 uppercase tracking-widest">
             Adjust your inputs (Math updates dynamically)
           </p>
 
@@ -462,9 +462,9 @@ export default function CalculatePage() {
                 green: false,
               },
             ].map(({ label, value, sub, green, red, yellow, tooltip }) => (
-              <div key={label} className={`relative group rounded-2xl p-4 text-center border-2 ${green ? 'border-[#16a34a] bg-[#f0fdf4] shadow-sm' : red ? 'border-[#ef4444] bg-[#fef2f2] shadow-sm' : yellow ? 'border-[#eab308] bg-[#fefce8] shadow-sm' : 'border-[#e4e1d9] bg-white'}`}>
+              <div key={label} className={`relative group rounded-xl p-3 md:p-4 text-center border-2 ${green ? 'border-[#16a34a] bg-[#f0fdf4] shadow-sm' : red ? 'border-[#ef4444] bg-[#fef2f2] shadow-sm' : yellow ? 'border-[#eab308] bg-[#fefce8] shadow-sm' : 'border-[#e4e1d9] bg-white'}`}>
                 <div className={`text-[9px] font-bold mb-1 uppercase tracking-widest ${green ? 'text-[#16a34a]' : red ? 'text-[#ef4444]' : yellow ? 'text-[#ca8a04]' : 'text-[#5c5c5c]'}`}>{label}</div>
-                <div className={`text-2xl font-black mb-1 tracking-tight ${green ? 'text-[#16a34a]' : red ? 'text-[#ef4444]' : yellow ? 'text-[#ca8a04]' : 'text-[#1a1a1a]'}`}>{value}</div>
+                <div className={`text-xl lg:text-2xl font-black mb-1 tracking-tight ${green ? 'text-[#16a34a]' : red ? 'text-[#ef4444]' : yellow ? 'text-[#ca8a04]' : 'text-[#1a1a1a]'}`}>{value}</div>
                 <div className="text-[10px] font-bold text-[#5c5c5c] leading-tight">{sub}</div>
                 {tooltip && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[120%] bg-[#1a1a1a] text-white text-[10px] px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 font-bold pointer-events-none">
@@ -478,10 +478,10 @@ export default function CalculatePage() {
 
           {/* Missing Goal Warning */}
           {targetRetirementAge && isTargetExtremelyAggressive ? (
-              <div className="rounded-2xl p-5 mb-6 bg-[#fef2f2] border-2 border-[#ef4444] text-[#7f1d1d] shadow-sm flex items-start gap-3">
+              <div className="rounded-xl p-4 mb-6 bg-[#fef2f2] border-2 border-[#ef4444] text-[#7f1d1d] shadow-sm flex items-start gap-3">
                 <div className="text-xl shrink-0 mt-0.5">🛑</div>
-                <div className="text-[13px] leading-relaxed">
-                  <strong className="block text-base mb-2">Warning: Mathematically Improbable</strong>
+                <div className="text-xs leading-relaxed">
+                  <strong className="block text-sm mb-1.5">Warning: Mathematically Improbable</strong>
                   You want to exit at {targetRetirementAge}, but that requires saving <strong className="text-[#ef4444]">${Math.round(requiredMonthlyContrib).toLocaleString()}/month</strong> (over 80% of your income). This is mathematically improbable.
                   <br /><br />
                   To make this work, you need to drastically increase your income, expect massive salary growth, or explore a different strategy like <strong>Coast FIRE</strong> or <strong>Barista FIRE</strong>. Otherwise, a highly aggressive goal is saving 50% of your income <strong>(${Math.round(realisticMaxSavings).toLocaleString()}/month)</strong>.
@@ -501,8 +501,8 @@ export default function CalculatePage() {
 
           {/* Summary callout */}
           {!isTargetExtremelyAggressive && (
-            <div className="rounded-2xl p-5 mb-6 bg-[#1a1a1a] text-white shadow-md">
-              <p className="text-sm leading-relaxed font-medium">
+            <div className="rounded-xl p-4 mb-6 bg-[#1a1a1a] text-white shadow-md">
+              <p className="text-xs leading-relaxed font-medium">
                 {baseFIRE?.summary}{' '}
                 <span className="text-[#4ade80]">
                   Move the sliders to see how saving more or less each month changes your timeline.
@@ -512,7 +512,7 @@ export default function CalculatePage() {
           )}
 
           {/* ── Sliders ── */}
-          <div className="rounded-2xl p-5 md:p-6 bg-white border-2 border-[#e4e1d9] space-y-8">
+          <div className="rounded-xl p-4 md:p-6 bg-white border-2 border-[#e4e1d9] space-y-6">
             <h3 className="text-xs font-black text-[#1a1a1a] uppercase tracking-widest border-b border-[#e4e1d9] pb-3">
               Simulation Control Panel
             </h3>
@@ -789,10 +789,10 @@ export default function CalculatePage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#ef4444] border border-[#ef4444]/30 rounded-full mb-3">
             The Fee Reveal
           </div>
-          <h2 className="text-2xl lg:text-3xl font-black mb-3 tracking-tight text-[#1a1a1a]">
+          <h2 className="text-xl lg:text-3xl font-black mb-3 tracking-tight text-[#1a1a1a]">
             {sentimentData.title}
           </h2>
-          <p className="text-base text-[#5c5c5c] mb-6 leading-relaxed">
+          <p className="text-sm text-[#5c5c5c] mb-6 leading-relaxed">
             {sentimentData.desc}
           </p>
 
@@ -801,12 +801,12 @@ export default function CalculatePage() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="rounded-2xl p-6 text-center mb-6 bg-[#1a1a1a] text-white shadow-lg"
+            className="rounded-xl p-4 text-center mb-6 bg-[#1a1a1a] text-white shadow-lg"
           >
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#9ca3af] mb-2">
               Extra fees paid to a financial advisor over {feeYears} years
             </p>
-            <div className="text-5xl lg:text-6xl font-black mb-3 text-[#ef4444] tracking-tighter">
+            <div className="text-4xl lg:text-6xl font-black mb-3 text-[#ef4444] tracking-tighter">
               <AnimatedNumber value={feeLost} />
             </div>
             <p className="text-xs font-medium text-[#9ca3af]">
@@ -817,7 +817,7 @@ export default function CalculatePage() {
           </motion.div>
 
           {/* Chart */}
-          <div className="rounded-2xl p-5 md:p-6 bg-white border-2 border-[#e4e1d9] mb-6">
+          <div className="rounded-xl p-4 md:p-6 bg-white border-2 border-[#e4e1d9] mb-6">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <h3 className="text-xs font-black uppercase tracking-widest text-[#1a1a1a]">Portfolio growth</h3>
               <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-wider text-[#5c5c5c]">
@@ -831,7 +831,7 @@ export default function CalculatePage() {
                 </span>
               </div>
             </div>
-            <ResponsiveContainer width="100%" height={240}>
+            <ResponsiveContainer width="100%" height={220}>
               <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="greenFill" x1="0" y1="0" x2="0" y2="1">
@@ -861,20 +861,20 @@ export default function CalculatePage() {
 
           {/* Final balances */}
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
-            <div className="rounded-2xl p-5 border-2 border-[#16a34a] bg-[#f0fdf4]">
+            <div className="rounded-xl p-4 border-2 border-[#16a34a] bg-[#f0fdf4]">
               <div className="text-[9px] font-bold uppercase tracking-widest mb-1 text-[#16a34a]">
                 With index fund (0.05% fee)
               </div>
-              <div className="text-2xl font-black text-[#16a34a] tracking-tight">
+              <div className="text-xl lg:text-2xl font-black text-[#16a34a] tracking-tight">
                 {formatCurrency(feeComparison?.finalBalanceIndex ?? 0, true)}
               </div>
               <div className="text-[10px] font-bold mt-1 text-[#16a34a] opacity-70 uppercase tracking-widest">after {feeYears} years</div>
             </div>
-            <div className="rounded-2xl p-5 border-2 border-[#ef4444] bg-[#fef2f2]">
+            <div className="rounded-xl p-4 border-2 border-[#ef4444] bg-[#fef2f2]">
               <div className="text-[9px] font-bold uppercase tracking-widest mb-1 text-[#ef4444]">
                 With financial advisor (1.5% fee)
               </div>
-              <div className="text-2xl font-black text-[#ef4444] tracking-tight">
+              <div className="text-xl lg:text-2xl font-black text-[#ef4444] tracking-tight">
                 {formatCurrency(feeComparison?.finalBalanceAUM ?? 0, true)}
               </div>
               <div className="text-[10px] font-bold mt-1 text-[#ef4444] opacity-70 uppercase tracking-widest">after {feeYears} years</div>
@@ -882,15 +882,15 @@ export default function CalculatePage() {
           </div>
 
           {/* Explainer note */}
-          <div className="rounded-2xl p-5 mb-6 bg-[#fffbeb] border-2 border-[#fde68a]">
-            <p className="text-xs leading-relaxed text-[#78350f] font-medium">
+          <div className="rounded-xl p-4 mb-6 bg-[#fffbeb] border-2 border-[#fde68a]">
+            <p className="text-[11px] leading-relaxed text-[#78350f] font-medium">
               <strong className="font-black">Why does 1.45% matter so much?</strong> Because the fee is charged on your entire balance every year — not just your gains. As your balance grows, so does the dollar amount of the fee. And every dollar paid in fees is a dollar that can no longer compound for you. It&apos;s a quiet, continuous drain that most people never notice until they do the math.
             </p>
           </div>
 
           {/* Time horizon slider for Fee Reveal */}
-          <div className="mt-12 bg-white p-5 md:p-6 rounded-2xl border-2 border-[#e4e1d9] shadow-sm max-w-2xl mx-auto">
-            <h4 className="text-[10px] font-bold text-[#16a34a] uppercase tracking-widest mb-4">Chart Controls</h4>
+          <div className="mt-10 bg-white p-4 md:p-6 rounded-xl border-2 border-[#e4e1d9] shadow-sm max-w-2xl mx-auto">
+            <h4 className="text-[10px] font-bold text-[#16a34a] uppercase tracking-widest mb-3">Chart Controls</h4>
             <SliderRow
               label="Time horizon for fee comparison"
               value={feeYears}

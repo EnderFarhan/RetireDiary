@@ -275,7 +275,7 @@ export default function QuizPage() {
           {/* Scrollable question area */}
           <main ref={scrollRef} className="flex-1 overflow-y-auto px-6 lg:px-16 flex flex-col">
             <div className="flex-1 flex flex-col justify-center max-w-xl mx-auto w-full py-12">
-            <div className="inline-flex lg:hidden items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#16a34a] border border-[#16a34a]/30 rounded-full mb-6">
+            <div className="inline-flex lg:hidden w-fit self-start items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#16a34a] border border-[#16a34a]/30 rounded-full mb-6">
               Question {currentIndex + 1} of {totalQuestions}
             </div>
 
@@ -360,13 +360,13 @@ export default function QuizPage() {
                        <button
                          key={option.id}
                          onClick={() => handleSelect(option.id)}
-                         className={`w-full text-left px-5 py-4 rounded-2xl border-2 transition-all duration-200 cursor-pointer ${
+                         className={`w-full text-left px-4 py-3 md:px-5 md:py-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${
                            isSelected 
                              ? 'bg-[#f0fdf4] border-[#16a34a] shadow-[0_4px_12px_rgba(22,163,74,0.15)] -translate-y-0.5' 
                              : 'bg-white border-[#e4e1d9] hover:border-[#1a1a1a] hover:bg-[#f9fafb]'
                          }`}
                        >
-                         <span className={`text-base block ${isSelected ? 'text-[#16a34a] font-bold' : 'text-[#1a1a1a] font-medium'}`}>
+                         <span className={`text-[13px] md:text-sm block leading-snug ${isSelected ? 'text-[#16a34a] font-bold' : 'text-[#1a1a1a] font-medium'}`}>
                            {option.label}
                          </span>
                        </button>

@@ -134,16 +134,16 @@ const CREDIBILITY_STATS = [
 
 const Credibility = () => {
   return (
-    <section className="py-8 bg-white border-y border-[#e4e1d9] overflow-hidden flex">
+    <section className="py-4 md:py-8 bg-white border-y border-[#e4e1d9] overflow-hidden flex">
       <motion.div
         className="flex whitespace-nowrap items-center w-max"
         animate={{ x: ["0%", "-50%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
       >
         {[...CREDIBILITY_STATS, ...CREDIBILITY_STATS].map((stat, i) => (
-          <div key={i} className="flex flex-col items-center justify-center shrink-0 mx-8 md:mx-16">
-            <div className="text-2xl md:text-3xl font-black text-[#1a1a1a] mb-1">{stat.value}</div>
-            <div className="text-xs md:text-sm text-[#5c5c5c] font-medium">{stat.label}</div>
+          <div key={i} className="flex flex-col items-center justify-center shrink-0 mx-6 md:mx-16">
+            <div className="text-xl md:text-3xl font-black text-[#1a1a1a] mb-0.5 md:mb-1">{stat.value}</div>
+            <div className="text-[10px] md:text-sm text-[#5c5c5c] font-medium">{stat.label}</div>
           </div>
         ))}
       </motion.div>
