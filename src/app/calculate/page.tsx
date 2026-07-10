@@ -185,7 +185,7 @@ export default function CalculatePage() {
     hasEmployerMatch: true,
     matchPct: '5%',
     hasDebt: true,
-    debtRate: 'over 5%',
+    debtRate: 'over 7%',
     isUs: false,
     hdhpStatus: 'hdhp_enrolled',
     isCanadian: false,

@@ -568,7 +568,7 @@ export default function DashboardPage() {
           hasEmployerMatch={hasEmployerMatch}
           matchPct={matchPct}
           hasDebt={debtStatus === 'over_5' || debtStatus === 'under_5'}
-          debtRate={debtStatus === 'over_5' ? 'over 5%' : 'under 5%'}
+          debtRate={debtStatus === 'over_5' ? 'over 7%' : 'under 7%'}
           isUs={isUs}
           hdhpStatus={hdhpStatus}
           isCanadian={isCanadian}
