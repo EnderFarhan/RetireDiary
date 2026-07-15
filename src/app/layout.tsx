@@ -40,10 +40,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        {/* Placeholder for Google AdSense Script */}
+        {/* Google AdSense Script */}
         <script 
           async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1686359099684744"
           crossOrigin="anonymous"
         ></script>
       </head>
